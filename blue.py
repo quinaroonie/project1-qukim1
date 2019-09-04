@@ -1,6 +1,7 @@
 # app.py
 
-import random, requests, json, requests_oauthlib
+import random, requests, json
+#import requests_oauthlib
 import flask
 import os
 
@@ -33,11 +34,6 @@ app.run(
     port=int(os.getenv('PORT', 8080)),
     host=os.getenv('IP', '0.0.0.0')
 )
-
-
-
-
-
 
 
 api_token = '3yEHJrYc03grMh7SUZsRlZKDlQv-3NK0EyJ3iZQquV69HlpaCU9p28OoUejFOLu5'
