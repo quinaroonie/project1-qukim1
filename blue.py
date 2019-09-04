@@ -20,33 +20,29 @@ my_headers = {
 response = requests.get(url, headers=my_headers)
 json_body = response.json()
 #print(json_body["response"]["hits"][0]["type"])
-print(json_body["response"]["hits"][random.randint(1, 100)]["result"]["song_art_image_url"])
+#print(json_body["response"]["hits"][random.randint(1, 100)]["result"]["song_art_image_url"])
 #print(json_body["response"]["hits"][0]["result"]["full_title"]
 
 
 @app.route("/")  
 def index():  
-    photo = json_body["response"]["hits"][random.randint(1, 100)]["result"]["song_art_image_url"]
-    return flask.render_template(
-        "index.html",
-        album_src=photo)
+   photo = json_body["response"]["hits"][random.randint(1, 20)]["result"]["song_art_image_url"]
+   return flask.render_template(
+       "index.html",
+        album_src=photo) 
+   
         
-"""      
-    title = json_body["response"]["hits"][0]["result"]["full_title"]
-    return flask.render_template(
-        "index.html",
-        title_src=title)
-"""    
+#    title = json_body["response"]["hits"][0]["result"]["full_title"]
+#    return flask.render_template(
+#        "index.html",
+#        title_src=title)
+    
 
 
 app.run(
     port=int(os.getenv('PORT', 8080)),
     host=os.getenv('IP', '0.0.0.0')
 )
-
-
-
-
 
 
 
