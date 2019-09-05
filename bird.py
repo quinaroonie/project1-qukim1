@@ -1,0 +1,34 @@
+import random, json
+import requests_oauthlib, requests
+import flask
+import os
+
+
+app = flask.Flask(__name__)
+
+
+url = "https://api.twitter.com/1.1/search/tweets.json?q=outkast"
+oauth = requests_oauthlib.OAuth1(
+    "C7naPh6NBJhMYBX1JMAnLX67d", 
+    "AkZqf5Dq6cnVlpVfMYDuGTaA3y0SLOxjGcS98swGs94ItLH1EL",
+    "3846948017-Vsqn57lvX9zmjtslCoA0gENtbs3jJP21OkyPvYQ",
+    "EVunEKabWXO69Kqi6uqkgIhxgUkzSwWayk1JsT9y77R1G"
+)
+  
+response = requests.get("https://api.twitter.com/1.1/search/tweets.json?q=outkast", auth=oauth)
+json_body = response.json()
+
+@app.route("/")  
+def index(): 
+    r = random.randint(1, 100)
+    a = random.randint(1, 100)
+    n = random.randint(1, 100)
+    tweet1 = json_body["u'statuses"][r]["u'text"]
+    tweet2 = json_body["u'statuses"][a]["u'text"]
+    tweet3 = json_body["u'statuses"][n]["u'text"]
+    
+    return flask.render_template(
+       "index.html",
+        tweet1_src=tweet1, tweet2_src=tweet2, tweet3_src=tweet3) 
+
+
