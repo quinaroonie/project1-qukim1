@@ -10,9 +10,10 @@ body {
   text-align: center 
 }
 
-img {
+.album {
   max-width: 300px;
 }
+
 
 
 div {
