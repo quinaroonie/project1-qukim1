@@ -18,14 +18,13 @@ oauth = requests_oauthlib.OAuth1(
 response = requests.get("https://api.twitter.com/1.1/search/tweets.json?q=outkast", auth=oauth)
 json_body = response.json()
 
-print(json_body["statuses"][0]["text"])
 
 
 @app.route("/")  
 def index(): 
-    r = random.randint(1, 100)
-    a = random.randint(1, 100)
-    n = random.randint(1, 100)
+    r = random.randint(1, 200)
+    a = random.randint(1, 200)
+    n = random.randint(1, 200)
     tweet1 = json_body["statuses"][r]["text"]
     tweet2 = json_body["statuses"][a]["text"]
     tweet3 = json_body["statuses"][n]["text"]
