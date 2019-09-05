@@ -25,11 +25,13 @@ json_body = response.json()
 
 
 @app.route("/")  
-def index():  
-   photo = json_body["response"]["hits"][random.randint(1, 20)]["result"]["song_art_image_url"]
-   return flask.render_template(
+def index(): 
+    r = random.randint(1, 100)
+    photo = json_body["response"]["hits"][r]["result"]["song_art_image_url"]
+    title = json_body["response"]["hits"][r]["result"]["full_title"]
+    return flask.render_template(
        "index.html",
-        album_src=photo) 
+        album_src=photo, title_src=title) 
    
         
 #    title = json_body["response"]["hits"][0]["result"]["full_title"]
