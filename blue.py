@@ -9,7 +9,9 @@ app = flask.Flask(__name__)
 api_token = '3yEHJrYc03grMh7SUZsRlZKDlQv-3NK0EyJ3iZQquV69HlpaCU9p28OoUejFOLu5'
 genius_url = "https://api.genius.com/search?q=Outkast"
 
-twitter_url = "https://api.twitter.com/1.1/search/tweets.json?q=outkast"
+#"https://api.twitter.com/1.1/search/tweets.json?q=outkast" 
+
+twitter_url = "https://api.twitter.com/1.1/search?q=outkast%2C%20generation&src=typed_query&f=top"
 oauth = requests_oauthlib.OAuth1(
     "C7naPh6NBJhMYBX1JMAnLX67d", 
     "AkZqf5Dq6cnVlpVfMYDuGTaA3y0SLOxjGcS98swGs94ItLH1EL",
@@ -25,6 +27,8 @@ genius_response = requests.get(genius_url, headers=my_headers)
 genius_json_body = genius_response.json()
 twitter_response = requests.get(twitter_url, auth=oauth)
 twitter_json_body = twitter_response.json()
+
+print(twitter_response.json())
 
 
 @app.route("/")  
