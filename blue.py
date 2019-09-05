@@ -1,6 +1,5 @@
-import random,json
+import random, json, flask
 import requests_oauthlib, requests
-import flask
 import os
 
 
