@@ -25,10 +25,10 @@ def index():
     r = random.randint(1, 20)
     photo = json_body["response"]["hits"][r]["result"]["song_art_image_url"]
     title = json_body["response"]["hits"][r]["result"]["full_title"]
-    artist = json_body["response"]["hits"][r]["result"]["full_title"]
+    artist = json_body["response"]["hits"][r]["result"]["image_url"]
     return flask.render_template(
        "index.html",
-        album_src=photo, title_src=title) 
+        album_src=photo, title_src=title, artist_src=artist) 
    
         
 #    title = json_body["response"]["hits"][0]["result"]["full_title"]
