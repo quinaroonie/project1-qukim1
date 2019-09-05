@@ -34,3 +34,7 @@ def index():
        "index.html",
         tweet1_src=tweet1, tweet2_src=tweet2, tweet3_src=tweet3) 
 
+app.run(
+    port=int(os.getenv('PORT', 8080)),
+    host=os.getenv('IP', '0.0.0.0')
+)
