@@ -9,9 +9,9 @@ app = flask.Flask(__name__)
 api_token = '3yEHJrYc03grMh7SUZsRlZKDlQv-3NK0EyJ3iZQquV69HlpaCU9p28OoUejFOLu5'
 genius_url = "https://api.genius.com/search?q=Outkast"
 
-#"https://api.twitter.com/1.1/search/tweets.json?q=outkast" 
+# search?q=outkast%2C%20generation&src=typed_query&f=top
 
-twitter_url = "https://api.twitter.com/1.1/search?q=outkast%2C%20generation&src=typed_query&f=top"
+twitter_url = "https://api.twitter.com/1.1/search/tweets.json?q=outkast"
 oauth = requests_oauthlib.OAuth1(
     "C7naPh6NBJhMYBX1JMAnLX67d", 
     "AkZqf5Dq6cnVlpVfMYDuGTaA3y0SLOxjGcS98swGs94ItLH1EL",
