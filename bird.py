@@ -19,6 +19,8 @@ response = requests.get("https://api.twitter.com/1.1/search/tweets.json?q=outkas
 json_body = response.json()
 
 
+print(json_body["statuses"][random.randint(1, 14)]["text"] + "\n")
+
 @app.route("/")  
 def index(): 
     r = random.randint(1, 14)
