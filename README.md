@@ -1,16 +1,13 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
-
-
-Hi there! Welcome to AWS Cloud9!
-
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
-
-Happy coding!
-# idlewild-git
-# idlewild-git
+What was the theme you chose?
+    - 
+How did you pick your searches to fit the theme?
+    -
+What are at least 3 issues you encountered with your project? How did you fix them?
+    1. I had problems with getting the Flask to work. I read over online manuels and made sure i had everthing necessary.
+    2. 
+    3. The tweets did not show up on the HTML when it was deployed through heroku.
+    
+What are known problems, if any, with your project?
+    -
+What would you do to improve your project in the future?
+    -

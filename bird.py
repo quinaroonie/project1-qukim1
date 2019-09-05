@@ -19,12 +19,11 @@ response = requests.get("https://api.twitter.com/1.1/search/tweets.json?q=outkas
 json_body = response.json()
 
 
-
 @app.route("/")  
 def index(): 
-    r = random.randint(1, 200)
-    a = random.randint(1, 200)
-    n = random.randint(1, 200)
+    r = random.randint(1, 14)
+    a = random.randint(1, 14)
+    n = random.randint(1, 14)
     tweet1 = json_body["statuses"][r]["text"]
     tweet2 = json_body["statuses"][a]["text"]
     tweet3 = json_body["statuses"][n]["text"]
