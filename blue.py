@@ -30,7 +30,7 @@ twitter_json_body = twitter_response.json()
 
 @app.route("/")  
 def index(): 
-    r = random.randint(1, 10)
+    r = random.randint(0, 9)
     a = random.randint(0, 5)
     n = random.randint(6, 10)
     d = random.randint(10, 14)
