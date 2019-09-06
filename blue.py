@@ -5,11 +5,10 @@ import os
 
 app = flask.Flask(__name__)
 
+#https://api.genius.com/search?q=outkast%2C%20generation&src=typed_query&f=top
 
 api_token = '3yEHJrYc03grMh7SUZsRlZKDlQv-3NK0EyJ3iZQquV69HlpaCU9p28OoUejFOLu5'
 genius_url = "https://api.genius.com/search?q=Outkast"
-
-# search?q=outkast%2C%20generation&src=typed_query&f=top
 
 twitter_url = "https://api.twitter.com/1.1/search/tweets.json?q=outkast"
 oauth = requests_oauthlib.OAuth1(
@@ -28,15 +27,13 @@ genius_json_body = genius_response.json()
 twitter_response = requests.get(twitter_url, auth=oauth)
 twitter_json_body = twitter_response.json()
 
-print(twitter_response.json())
-
 
 @app.route("/")  
 def index(): 
     r = random.randint(1, 10)
-    a = random.randint(1, 14)
-    n = random.randint(1, 14)
-    d = random.randint(1, 14)
+    a = random.randint(1, 13)
+    n = random.randint(1, 13)
+    d = random.randint(1, 13)
     photo = genius_json_body["response"]["hits"][r]["result"]["song_art_image_url"]
     title = genius_json_body["response"]["hits"][r]["result"]["full_title"]
     artist = genius_json_body["response"]["hits"][r]["result"]["primary_artist"]["image_url"]
