@@ -11,6 +11,7 @@ api_token = '3yEHJrYc03grMh7SUZsRlZKDlQv-3NK0EyJ3iZQquV69HlpaCU9p28OoUejFOLu5'
 genius_url = "https://api.genius.com/search?q=Outkast"
 
 twitter_url = "https://api.twitter.com/1.1/search/tweets.json?q=outkast"
+twitter_url2 = "https://api.twitter.com/1.1/search/tweets.json?q=andre_3000"
 oauth = requests_oauthlib.OAuth1(
     "C7naPh6NBJhMYBX1JMAnLX67d", 
     "AkZqf5Dq6cnVlpVfMYDuGTaA3y0SLOxjGcS98swGs94ItLH1EL",
@@ -26,20 +27,22 @@ genius_response = requests.get(genius_url, headers=my_headers)
 genius_json_body = genius_response.json()
 twitter_response = requests.get(twitter_url, auth=oauth)
 twitter_json_body = twitter_response.json()
+twitter2_response = requests.get(twitter_url2, auth=oauth)
+twitter2_json_body = twitter2_response.json()
 
 
 @app.route("/")  
 def index(): 
     r = random.randint(0, 9)
-    a = random.randint(0, 5)
-    n = random.randint(6, 10)
-    d = random.randint(10, 14)
+    a = random.randint(0, 14)
+    n = random.randint(0, 14)
+    d = random.randint(0, 14)
     photo = genius_json_body["response"]["hits"][r]["result"]["song_art_image_url"]
     title = genius_json_body["response"]["hits"][r]["result"]["full_title"]
     artist = genius_json_body["response"]["hits"][r]["result"]["primary_artist"]["image_url"]
     tweet1 = twitter_json_body["statuses"][a]["text"]
     tweet2 = twitter_json_body["statuses"][n]["text"]
-    tweet3 = twitter_json_body["statuses"][d]["text"]
+    tweet3 = twitter2_json_body["statuses"][d]["text"]
     
     return flask.render_template(
        "index.html",
